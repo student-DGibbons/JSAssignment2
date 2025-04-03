@@ -1,0 +1,168 @@
+<!-- JS Assignment 2—Dylan Gibbons (200230810) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Assignment 2</title>
+  <!-- Links to CSS and JS files -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- JS file defered -->
+  <script src="script.js" defer></script>
+  <!-- Adding Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    
+  </style>
+</head>
+<body>
+    <!-- I use divs throughout to make it easier to style everything via grid/flexbox -->
+<div class="container">
+  <h1>🍹 Smoothie Order Form 🍹</h1>
+  <form id="smoothieForm">
+    <!-- Name section -->
+    <div class="form-section">
+        <!-- Simple text input box with a required attribute -->
+      <label for="name">Name On Order:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+    <!-- Base selection -->
+     <!-- There's a div container that has the button and another div container as child elements
+      which I use fairly consistently for each section; the idea is to initially to have the button
+      showing and the rest of the content hidden, and then, upon click, to hide the button and show
+      the inputs -->
+    <div class="form-section dropdown">
+      <button type="button" class="dropbtn">Choose Your Base</button>
+      <div class="dropdown-content">
+        <label>
+            <input type="radio" name="base" value="Regular Milk" required>
+            Regular Milk
+        </label>
+        <label>
+            <input type="radio" name="base" value="Almond Milk" required>
+            Almond Milk
+        </label>
+        <label>
+            <input type="radio" name="base" value="Oat Milk" required>
+            Oat Milk
+        </label>
+        <label>
+            <input type="radio" name="base" value="Coconut Water" required>
+            Coconut Water
+        </label>
+        <label>
+            <input type="radio" name="base" value="Greek Yogurt" required>
+            Greek Yogurt
+        </label>
+        <label>
+          <input type="radio" name="base" value="Soy Milk" required>
+          Soy Milk
+        </label>
+      </div>
+    </div>
+
+    <!-- Flavour selection -->
+    <div class="form-section dropdown">
+        <!-- Reusing classes so that I can reuse CSS for styling -->
+      <button type="button" class="dropbtn">Choose Your Flavour</button>
+      <div class="dropdown-content">
+        <label>
+          <input type="radio" name="flavor" value="Tropical Blast" required>
+          Tropical Blast (Mango + Pineapple)
+        </label>
+        <label>
+          <input type="radio" name="flavor" value="Berry Burst" required>
+          Berry Burst (Strawberry + Blueberry)
+        </label>
+        <label>
+          <input type="radio" name="flavor" value="Green Reverie" required>
+          Green Reverie (Spinach + Kale)
+        </label>
+        <label>
+          <input type="radio" name="flavor" value="Chocolate Crush" required>
+          Chocolate Crush (Dark Chocolate + Banana)
+        </label>
+        <label>
+          <input type="radio" name="flavor" value="Vanilla Sky" required>
+          Vanilla Sky (Vanilla + Almond)
+        </label>
+        <label>
+          <input type="radio" name="flavor" value="Citrus Plus" required>
+          Citrus Plus (Orange + Lemon)
+        </label>
+      </div>
+    </div>
+
+    <!-- Size selection. Using radio buttons for this and the next section since you can choose
+     only one option and it's less of a menu than the last two sections -->
+    <div class="form-section">
+      <label>Choose Size:</label>
+      <div class="options-grid">
+        <label class="option">
+          <input type="radio" name="size" value="Small (12oz)" required>
+          Small (8oz)
+        </label>
+        <label class="option">
+          <input type="radio" name="size" value="Medium (16oz)" required>
+          Medium (16oz)
+        </label>
+        <label class="option">
+          <input type="radio" name="size" value="Large (24oz)" required>
+          Large (24oz)
+        </label>
+      </div>
+    </div>
+
+    <!-- Protein add-ons (not required)-->
+    <div class="form-section">
+      <label>Protein Options:</label>
+      <div class="options-grid">
+        <label class="option">
+          <input type="radio" name="protein" value="Vanilla Protein">
+          Vanilla
+        </label>
+        <label class="option">
+          <input type="radio" name="protein" value="Chocolate Protein">
+          Chocolate
+        </label>
+        <label class="option">
+          <input type="radio" name="protein" value="Unflavored Protein">
+          Unflavoured
+        </label>
+        <label class="option">
+          <input type="radio" name="protein" value="None">
+          None
+        </label>
+      </div>
+    </div>
+
+    <!-- Toppings section. Using a check box for this section. (not required) -->
+    <div class="form-section">
+      <label>Toppings:</label>
+      <div class="toppings-grid">
+        <label><input type="checkbox" name="toppings" value="Chocolate Flakes"> Chocolate Flakes</label>
+        <label><input type="checkbox" name="toppings" value="Coconut Flakes"> Coconut Flakes</label>
+        <label><input type="checkbox" name="toppings" value="Granola"> Granola</label>
+        <label><input type="checkbox" name="toppings" value="Mixed Berries"> Mixed Berries</label>
+        <label><input type="checkbox" name="toppings" value="Mixed Nuts"> Mixed Nuts</label>
+        <label><input type="checkbox" name="toppings" value="Chia Seeds"> Chia Seeds</label>
+      </div>
+    </div>
+
+    <!-- Special instructions. Optional instructions (not required) -->
+    <div class="form-section">
+      <label for="instructions">Special Instructions:</label>
+      <textarea id="instructions" name="instructions" rows="3"></textarea>
+    </div>
+
+    <button type="submit">Place Order</button>
+  </form>
+  <!-- As we did in class, this section is initially empty but will be populated upon clicking submit
+   with the values the user inputs via JavaScript -->
+  <div id="output" class="output"></div>
+</div>
+
+</body>
+</html>
