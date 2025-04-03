@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <!-- JS file defered -->
   <script src="script.js" defer></script>
-  <!-- Adding Google Fonts -->
+  <!-- Importing Google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
@@ -17,9 +17,9 @@
   </style>
 </head>
 <body>
-    <!-- I use divs throughout to make it easier to style everything via grid/flexbox -->
+    <!-- I use divs throughout to make it easier to style everything via grid/flexbox/border-box -->
 <div class="container">
-  <h1>🍹 Smoothie Order Form 🍹</h1>
+  <h1>🍹 Your Smoothie Order 🍹</h1>
   <form id="smoothieForm">
     <!-- Name section -->
     <div class="form-section">
@@ -31,7 +31,7 @@
     <!-- Base selection -->
      <!-- There's a div container that has the button and another div container as child elements
       which I use fairly consistently for each section; the idea is to initially to have the button
-      showing and the rest of the content hidden, and then, upon click, to hide the button and show
+      showing and the rest of the content hidden and then, upon click, to hide the button and show
       the inputs -->
     <div class="form-section dropdown">
       <button type="button" class="dropbtn">Choose Your Base</button>
@@ -138,7 +138,8 @@
       </div>
     </div>
 
-    <!-- Toppings section. Using a check box for this section. (not required) -->
+    <!-- Toppings section. Using a check box for this section since multiple options can be
+     selected (not required). -->
     <div class="form-section">
       <label>Toppings:</label>
       <div class="toppings-grid">

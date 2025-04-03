@@ -1,0 +1,180 @@
+/* JS Assignment 2—Dylan Gibbons (200230810) */
+body {
+    /* Basic page styling with light off-white background and google font */
+    font-family: 'Quicksand', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    color: #2c3e50;
+}
+
+.container {
+    /* Container for form content. White vs the off-white background makes it pop. 
+    The overall goal is to make it look like a card*/
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 0 auto;
+    /* Adding box shadow to make it pop */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* using border box so all of the paddings are taken into account throughout */
+    box-sizing: border-box;
+}
+
+h1 {
+    /* Basic styling using google font */
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    color: #27ae60;
+    margin: 0 0 20px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.dropdown {
+    /* Positioning for dropdown elements */
+    position: relative;
+    margin: 15px 0;
+    width: 100%;
+}
+
+.dropbtn {
+    /* Styling dropdown button with blue background. Making it take up max width (minus predefined margin) */
+    width: 100%;
+    padding: 12px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    /* Styling cursor and aligning to the left */
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.dropbtn::after {
+    /* Using a down arrow indicator for dropdown button and position absolute to keep it where I want it*/
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+
+.dropdown-content {
+    /* Dropdown menu is initially hidden and then on click will be changed to active form using JavaScript*/
+    display: none;
+    position: absolute;
+    background: white;
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Setting z-index to 1 so that a longer menu will still show up without worrying about
+    pushing content down or otherwise messing up the layout */
+    z-index: 1;
+    margin-top: 5px;
+}
+
+.dropdown-content label {
+    /* Individual dropdown items with hover effect */
+    display: block;
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content label:hover {
+    /* Hover state for dropdown items */
+    background: #f4f4f4;
+}
+
+.show { 
+    /* Class to toggle dropdown visibility */
+    display: block; 
+}
+
+.form-section {
+    /* Spacing between form sections */
+    margin: 15px 0;
+}
+
+.options-grid {
+    /* Responsive grid for option buttons */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.option {
+    /* Interactive option cards with blue border */
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.toppings-grid {
+    /* Flexible wrapping container for toppings */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.toppings-grid label {
+    /* Pill-shaped toppings with subtle background */
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #f0f0f0;
+}
+
+button {
+    /* Primary action button with orange colour to contrast the blue used in the dropdown menu.
+    The colour itself is overridden for the dropdown buttons since they're selected using classes
+    (which has higher precedence) */
+    width: 100%;
+    padding: 14px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    /* Darker hover colour to add some depth. This hover effect also applies to the dropdown
+    menu buttons since they're still buttons (the orange contrasts the blue nicely when it's hovered over)*/
+    background: #d35400;
+}
+
+.output {
+    /* Styled output container with slightly off-yellow/orange background. 
+    This gets populated after the submit button is clicked and it initially has a display
+    none value so that it takes up no space in the form*/
+    padding: 15px;
+    background: #fff3e0;
+    border-radius: 6px;
+    margin-top: 20px;
+    display: none;
+}
+
+input[type="text"],
+textarea {
+    /* Consistent input styling, basically just making sure it takes up the max width 
+    and is even with all the other content. I had an issue where I could drag the text input off the screen.*/
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 8px 0 15px;
+    font-family: 'Quicksand', sans-serif;
+    /* Resize: vertical prevents it from being dragged off of the form. (i.e., you can only drag it downwards) */
+    resize: vertical;
+}
